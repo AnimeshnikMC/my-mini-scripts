@@ -6,6 +6,7 @@
 // @author       Animeshnik_Maynkrafter
 // @match        https://trovo.live/*
 // @icon         https://www.google.com/s2/favicons?sz=128&domain=trovo.live
+// @updateURL    https://github.com/AnimeshnikMC/my-mini-scripts/raw/main/BTTV%20Chat%20Layout.user.js
 // @downloadURL  https://github.com/AnimeshnikMC/my-mini-scripts/raw/main/BTTV%20Chat%20Layout.user.js
 // @run-at       document-end
 // @grant        GM_log
