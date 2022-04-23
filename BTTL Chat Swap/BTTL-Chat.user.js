@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BTTL Chat Swap(dev)
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.4.2-dev
+// @version      0.4.2-dev.3
 // @description  Change the chat placement.
 // @author       Animeshnik_Maynkrafter
 // @match        https://trovo.live/*
@@ -30,13 +30,14 @@
 			btn1("Auto Mana - OFF",function(){
 				GM_unregisterMenuCommand(btn1);
 				localStorage.setItem("AutoMana","off");
+				GM_log("%cDisable","font-size:20px;color:#f00;")
 				menu();
 			});
 		}else{
 			btn1("Auto Mana - ON",function(){
 				GM_unregisterMenuCommand(btn1);
 				localStorage.setItem("AutoMana","on");
-				GM_log("%cEnable","font-size:20px;color:0f0;")
+				GM_log("%cEnable","font-size:20px;color:#0f0;")
 				menu();
 			});
 		}
