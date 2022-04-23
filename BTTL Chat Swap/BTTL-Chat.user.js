@@ -27,8 +27,8 @@
 
 function menu(){
 	var btn1=GM_registerMenuCommand
-	var c2x1=lStorage.getItem("AutoMana")
-	var c2x2=lStorage.setItem
+	var c2x1=localStorage.getItem("AutoMana")
+	var c2x2=localStorage.setItem
 	if((c2x1)&&(c2x1=="on")){
 		btn1("Auto Mana - OFF",function(){
 			GM_unregisterMenuCommand(btn1);
