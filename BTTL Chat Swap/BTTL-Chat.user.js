@@ -23,25 +23,25 @@
     const c1x1=GM_getResourceText("cx_CSS");
     GM_addStyle(c1x1);
 
-	function menu(){
-		var btn1=GM_registerMenuCommand
-		var c2x1=localStorage.getItem("AutoMana")
-		if((c2x1)&&(c2x1=="on")){
-			btn1("Auto Mana - OFF",function(){
-				GM_unregisterMenuCommand(btn1);
-				localStorage.setItem("AutoMana","off");
-				GM_log("%cDisable","font-size:20px;color:#f00;")
-				menu();
-			});
-		}else{
-			btn1("Auto Mana - ON",function(){
-				GM_unregisterMenuCommand(btn1);
-				localStorage.setItem("AutoMana","on");
-				GM_log("%cEnable","font-size:20px;color:#0f0;")
-				menu();
-			});
-		}
-	}
 	menu();
 })();
 
+function menu(){
+	var btn1=GM_registerMenuCommand
+	var c2x1=localStorage.getItem("AutoMana")
+	if((c2x1)&&(c2x1=="on")){
+		btn1("Auto Mana - OFF",function(){
+			GM_unregisterMenuCommand(btn1);
+			localStorage.setItem("AutoMana","off");
+			GM_log("%cDisable","font-size:20px;color:#f00;")
+			menu();
+		});
+	}else{
+		btn1("Auto Mana - ON",function(){
+			GM_unregisterMenuCommand(btn1);
+			localStorage.setItem("AutoMana","on");
+			GM_log("%cEnable","font-size:20px;color:#0f0;")
+			menu();
+		});
+	}
+}
