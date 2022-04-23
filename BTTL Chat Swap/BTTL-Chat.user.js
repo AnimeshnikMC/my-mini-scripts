@@ -28,17 +28,16 @@
 function menu(){
 	var btn1=GM_registerMenuCommand
 	var c2x1=localStorage.getItem("AutoMana")
-	var c2x2=localStorage.setItem
 	if((c2x1)&&(c2x1=="on")){
 		btn1("Auto Mana - OFF",function(){
 			GM_unregisterMenuCommand(btn1);
-			c2x2("AutoMana","off");
+			localStorage.setItem("AutoMana","off");
 			menu();
 		});
 	}else{
 		btn1("Auto Mana - ON",function(){
 			GM_unregisterMenuCommand(btn1);
-			c2x2("AutoMana","on");
+			localStorage.setItem("AutoMana","on");
 			menu();
 		});
 	}
