@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BTTL Chat Swap
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts/
-// @version      0.4.1
+// @version      0.4.1.5
 // @description  Change the chat placement.
 // @author       Animeshnik_Maynkrafter
 // @match        https://trovo.live/*

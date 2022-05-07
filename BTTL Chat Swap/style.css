@@ -5,7 +5,8 @@
 	border-Left: 1px solid var(--color-base-border);
 	border-Right: 0;
 }
-#__layout div div div.live-wrap.base-main div section.chat-wrap{
+#__layout div div div.live-wrap.base-main div section.chat-wrap,
+#__layout div div div.live-wrap.base-main div div.chat-wrap{
 	order: -1;
 	border-Left: 0;
 	border-Right: 1px solid var(--color-base-border);
