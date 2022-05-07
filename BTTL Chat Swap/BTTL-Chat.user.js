@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         BTTL Chat Swap(dev)
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.4.2-dev.4
+// @version      0.4.2-dev.5
 // @description  Change the chat placement.
 // @author       Animeshnik_Maynkrafter
 // @match        https://trovo.live/*
 // @icon         https://www.google.com/s2/favicons?sz=128&domain=trovo.live
-// @updateURL    https://github.com/AnimeshnikMC/my-mini-scripts/raw/dev/BTTL%20Chat%20Swap/BTTL-Chat.meta.js
+// @updateURL    https://github.com/AnimeshnikMC/my-mini-scripts/raw/dev/BTTL%20Chat%20Swap/BTTL-Chat.user.js
 // @downloadURL  https://github.com/AnimeshnikMC/my-mini-scripts/raw/dev/BTTL%20Chat%20Swap/BTTL-Chat.user.js
 // @run-at       document-end
 // @grant        GM_log
@@ -29,7 +29,7 @@
 function menu(){
 	var btn1=GM_registerMenuCommand;
 	var c2x1=localStorage.getItem("AutoMana");
-	if((c2x1)&&(c2x1=="on")){
+	if((c2x1==null)||(c2x1=="on")){
 		btn1("Auto Mana - OFF",function(){
 			GM_unregisterMenuCommand(btn1);
 			localStorage.setItem("AutoMana","off");
