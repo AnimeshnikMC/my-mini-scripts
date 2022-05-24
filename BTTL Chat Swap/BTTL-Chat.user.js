@@ -22,7 +22,6 @@
 
     const c1x1=GM_getResourceText("cx_CSS");
     GM_addStyle(c1x1);
-
 	menu();
 })();
 
@@ -36,7 +35,7 @@ function menu(){
 			GM_log("%cDisable","font-size:20px;color:#f00;");
 			menu();
 		});
-	}else{
+	}else if(c2x1=="off"){
 		btn1("Auto Mana - ON",function(){
 			GM_unregisterMenuCommand(btn1);
 			localStorage.setItem("AutoMana","on");
