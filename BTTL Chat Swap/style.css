@@ -1,10 +1,10 @@
-#__layout div div div.base-left-side-wrapper{
+#__layout div.top-container div.base-container div.base-left-side-container{
 	order: 1;
 }
-#__layout div div div.base-left-side-wrapper div.base-left-side{
+/*#__layout div div div.base-left-side-wrapper div.base-left-side{
 	border-Left: 1px solid var(--color-base-border);
 	border-Right: 0;
-}
+}*/
 #__layout div div div.live-wrap.base-main div section.chat-wrap,
 #__layout div div div.live-wrap.base-main div div.chat-wrap{
 	order: -1;
