@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BTTL Chat Swap(dev)
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.4.2-dev.6
+// @version      0.4.2-dev.7
 // @description  Change the chat placement.
 // @author       Animeshnik_Maynkrafter
 // @match        https://trovo.live/*
@@ -22,25 +22,25 @@
 
     const c1x1=GM_getResourceText("cx_CSS");
     GM_addStyle(c1x1);
-	menu();
+	// menu();
 })();
 
-function menu(){
-	var btn1=GM_registerMenuCommand;
-	var c2x1=localStorage.getItem("AutoMana");
-	if((c2x1==null)||(c2x1=="on")){
-		btn1("Auto Mana - OFF",function(){
-			GM_unregisterMenuCommand(btn1);
-			localStorage.setItem("AutoMana","off");
-			GM_log("%cDisable","font-size:20px;color:#f00;");
-			menu();
-		});
-	}else if(c2x1=="off"){
-		btn1("Auto Mana - ON",function(){
-			GM_unregisterMenuCommand(btn1);
-			localStorage.setItem("AutoMana","on");
-			GM_log("%cEnable","font-size:20px;color:#0f0;");
-			menu();
-		});
-	}
-}
+// function menu(){
+	// var btn1=GM_registerMenuCommand;
+	// var c2x1=localStorage.getItem("AutoMana");
+	// if((c2x1==null)||(c2x1=="on")){
+		// btn1("Auto Mana - OFF",function(){
+			// GM_unregisterMenuCommand(btn1);
+			// localStorage.setItem("AutoMana","off");
+			// GM_log("%cDisable","font-size:20px;color:#f00;");
+			// menu();
+		// });
+	// }else if(c2x1=="off"){
+		// btn1("Auto Mana - ON",function(){
+			// GM_unregisterMenuCommand(btn1);
+			// localStorage.setItem("AutoMana","on");
+			// GM_log("%cEnable","font-size:20px;color:#0f0;");
+			// menu();
+		// });
+	// }
+// }
