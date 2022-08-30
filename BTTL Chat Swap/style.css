@@ -1,14 +1,18 @@
 #__layout div.top-container div.base-container div.base-left-side-container{
 	order: 1;
 }
-/*#__layout div div div.base-left-side-wrapper div.base-left-side{
-	border-Left: 1px solid var(--color-base-border);
-	border-Right: 0;
-}*/
-#__layout div div div.live-wrap.base-main div section.chat-wrap,
-#__layout div div div.live-wrap.base-main div div.chat-wrap{
+#__layout div.top-container div.base-container div.base-main div.space.relative div.room{
+	order: -1;
+}
+#__layout div.top-container div.base-container div.base-main div.space.relative div.room div.slide-right-panel,
+#__layout div.top-container div.base-container div div.chat-wrap{
 	order: -1;
 	border-Left: 0;
 	border-Right: 1px solid var(--color-base-border);
 }
-/* #__layout div div div.live-wrap.base-main div section div.chat-body div div div.chat-list-wrap.chat-bg div.chat-list-box.snap-scroller-content ul div.message-comp */
+
+/*#__layout div div div.base-left-side-wrapper div.base-left-side{
+	border-Left: 1px solid var(--color-base-border);
+	border-Right: 0;
+}*/
+
