@@ -1,7 +1,7 @@
 #__layout div.top-container div.base-container div.base-left-side-container{
 	order: 1;
 }
-#__layout div.top-container div.base-container div.base-main div.space.relative div.room{
+#__layout div.top-container div.base-container div.base-main div.space.relative div.flex.flex-column.room
 	order: -1;
 }
 #__layout div.top-container div.base-container div.base-main div.space.relative div.room div.slide-right-panel,
