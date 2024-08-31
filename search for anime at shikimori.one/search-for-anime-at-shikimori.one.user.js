@@ -7,8 +7,8 @@
 // @match        *://*/*
 // @exclude      /^[^:/#?]*:\/\/([^#?/]*\.)?shikimori\.one(:[0-9]{1,5})?\/.*$/
 // @run-at       document-start
-// @downloadURL  https://raw.githubusercontent.com/AnimeshnikMC/my-mini-scripts/main/search%20for%20anime%20at%20shikimori.one/search-for-anime-at-shikimori.one.js
-// @updateURL    https://raw.githubusercontent.com/AnimeshnikMC/my-mini-scripts/main/search%20for%20anime%20at%20shikimori.one/search-for-anime-at-shikimori.one.js
+// @downloadURL  https://raw.githubusercontent.com/AnimeshnikMC/my-mini-scripts/main/search%20for%20anime%20at%20shikimori.one/search-for-anime-at-shikimori.one.user.js
+// @updateURL    https://raw.githubusercontent.com/AnimeshnikMC/my-mini-scripts/main/search%20for%20anime%20at%20shikimori.one/search-for-anime-at-shikimori.one.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
 // @grant        GM_registerMenuCommand
 // @grant        GM_unregisterMenuCommand
