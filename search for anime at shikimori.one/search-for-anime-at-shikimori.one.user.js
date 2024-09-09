@@ -15,7 +15,7 @@
 // @grant        GM_openInTab
 // ==/UserScript==
 
-(function() {
+(function(){
     'use strict';
 
     var btn1="off",btn2="off";
