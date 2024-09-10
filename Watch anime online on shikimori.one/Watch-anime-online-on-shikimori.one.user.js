@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Watch anime online on shikimori.one
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.2.7
+// @version      0.2.8
 // @description  ...
 // @author       AnimeshnikMC
 // @match        https://shikimori.one/*
@@ -31,10 +31,16 @@
             setAttrs(btnFS,{'class':'b-link_button btnFS','style':'position:absolute;right:0;'});
             btnFS.innerText='перейти в полный экран';
             setAttrs(playerFr,{'src':`//kodik.cc/find-player?shikimoriID=${JSON.parse(animeID).target_id}`,'width':"100%",'height':'100%','frameborder':'0','allowfullscreen':'','allow':'autoplay *;fullscreen *'});
-
+            player.addEventListener('fullscreenchange',()=>{
+                if (document.fullscreenElement) {
+                    btnFS.innerText='выйти из полного экрана';btnFS.style.opacity=0.2
+                } else {
+                    btnFS.innerText='перейти в полный экран';btnFS.style.opacity=1
+                }
+            })
             btnFS.addEventListener("click",(event)=>{
-                if(document.fullscreenElement){document.exitFullscreen();btnFS.innerText='перейти в полный экран';btnFS.style.opacity=1}
-                else{player.requestFullscreen();btnFS.innerText='выйти из полного экрана';btnFS.style.opacity=0.2}
+                if(document.fullscreenElement){document.exitFullscreen();}
+                else{player.requestFullscreen();}
               });
             player.append(btnFS,playerFr)
             return player
