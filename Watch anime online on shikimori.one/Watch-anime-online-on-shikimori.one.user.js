@@ -37,8 +37,8 @@
                 let main,btnWatch;
                 main=DCE('div');btnWatch=DCE('button');
                 setAttrs(btnWatch,{'class':'b-link_button btnWatch'});
-                btnWatch.innerText='Смотреть онлайн'
-                main.append(btnWatch)
+                btnWatch.innerText='Смотреть онлайн';
+                main.append(btnWatch);
                 mainEl.append(main);
                 btnWatch.addEventListener('click',(event)=>{
                     if(!s2){main.append(el=this.s0());btnWatch.innerText='Закрыть';s2=true;}
@@ -47,7 +47,7 @@
                 s1=true;
             }
         }
-        window.addEventListener('change',()=>{
+        window.addEventListener('load',()=>{
             if(cId())s1=false
             console.log('%cСтраница згружина!!!','color:0f0;font-size:16px;')
         });
