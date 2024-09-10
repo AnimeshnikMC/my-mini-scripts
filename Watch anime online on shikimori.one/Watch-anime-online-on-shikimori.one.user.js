@@ -49,7 +49,7 @@
         }
         window.addEventListener('load',()=>{
             if(cId())s1=false
-            console.log('%cСтраница згружина!!!','color:0f0;font-size:16px;')
+            console.log('%cСтраница згружина!!!','color:#0f0;font-size:16px;')
         });
         setInterval(()=>{if(cId())this.s1()},1000);
     }
