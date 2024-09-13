@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Watch anime online on shikimori.one
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.3.0
+// @version      0.3.0 fix
 // @description  ...
 // @author       AnimeshnikMC
 // @match        https://shikimori.one/*
