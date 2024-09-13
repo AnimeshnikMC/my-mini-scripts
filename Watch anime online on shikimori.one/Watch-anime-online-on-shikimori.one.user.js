@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Watch anime online on shikimori.one
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.3.0 fix
+// @version      0.3.0_fix
 // @description  ...
 // @author       AnimeshnikMC
 // @match        https://shikimori.one/*
@@ -71,7 +71,7 @@
         }
         setInterval(()=>{
             if(cId()){this.s1()}else if(!cId()&&s1){s1=false}
-            if(cId()&&s1&&s2){WAOscaling()}
+            if(cId()&&s1&&s2&&!document.fullscreenElement){WAOscaling()}
         },1000);
     }
 })();
