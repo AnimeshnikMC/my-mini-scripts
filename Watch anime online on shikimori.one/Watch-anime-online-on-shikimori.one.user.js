@@ -28,8 +28,8 @@
             var vid_w=DQS(`${m1}>.c-about>.WAOmain`).offsetWidth-6,
                 vid_h=(vid_w/(16/9)).toFixed(0),
                 player=DQS(`${m1}>.c-about>.WAOmain>.watchAnimeOnline`);
-            player.style.width=vid_w;
-            player.style.height=vid_h;
+            player.style.width=`${vid_w}px`;
+            player.style.height=`${vid_h}px`;
                 
         }
         this.s0=()=>{
