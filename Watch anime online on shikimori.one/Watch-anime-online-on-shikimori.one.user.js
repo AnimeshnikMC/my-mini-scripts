@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Watch anime online on shikimori.one
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.3.0_fix
+// @version      0.3.1
 // @description  ...
 // @author       AnimeshnikMC
 // @match        https://shikimori.one/*
@@ -24,18 +24,22 @@
 
         var s1=false,s2=false,el,m1='.l-content>div:nth-child(1)>.b-db_entry';
         function cId(){return getAttr(DQS('body'),'id')==='animes_show'?true:false}
-        function WAOscaling(){
+        function WAOscaling(p0=0){
             var vid_w=DQS(`${m1}>.c-about>.WAOmain`).offsetWidth-6,
-                vid_h=(vid_w/(16/9)).toFixed(0),
-                player=DQS(`${m1}>.c-about>.WAOmain>.watchAnimeOnline`);
-            player.style.width=`${vid_w}px`;
-            player.style.height=`${vid_h}px`;
-                
+                vid_h=(vid_w/(16/9)).toFixed(0);
+            if(p0===0){
+                var player=DQS(`${m1}>.c-about>.WAOmain>.watchAnimeOnline`);
+                player.style.width=`${vid_w}px`;
+                player.style.height=`${vid_h}px`;
+            }else{
+                return [vid_w,vid_h]
+            }
+            
         }
         this.s0=()=>{
             let player,btnFS,playerFr,animeID=getAttr(DQS(`${m1}>.c-image>.b-user_rate`),'data-model');
-            player=DCE('div');btnFS=DCE('button');playerFr=DCE('iframe');
-            setAttrs(player,{'class':'watchAnimeOnline','style':'position:relative;width:610px;height:370px;'});
+            player=DCE('div');btnFS=DCE('button');playerFr=DCE('iframe'),p0=WAOscaling(1);
+            setAttrs(player,{'class':'watchAnimeOnline','style':`position:relative;width:${p0[0]}px;height:${p0[1]}px;`});
             setAttrs(btnFS,{'class':'b-link_button btnFS','style':'position:absolute;right:0;'});
             btnFS.innerText='перейти в полный экран';
             setAttrs(playerFr,{'src':`//kodik.cc/find-player?shikimoriID=${JSON.parse(animeID).target_id}`,'width':"100%",'height':'100%','frameborder':'0','allowfullscreen':'','allow':'autoplay *;fullscreen *'});
