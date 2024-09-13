@@ -37,8 +37,8 @@
             
         }
         this.s0=()=>{
-            let player,btnFS,playerFr,animeID=getAttr(DQS(`${m1}>.c-image>.b-user_rate`),'data-model');
-            player=DCE('div');btnFS=DCE('button');playerFr=DCE('iframe'),p0=WAOscaling(1);
+            let player,btnFS,playerFr,animeID=getAttr(DQS(`${m1}>.c-image>.b-user_rate`),'data-model'),p0=WAOscaling(1);
+            player=DCE('div');btnFS=DCE('button');playerFr=DCE('iframe');
             setAttrs(player,{'class':'watchAnimeOnline','style':`position:relative;width:${p0[0]}px;height:${p0[1]}px;`});
             setAttrs(btnFS,{'class':'b-link_button btnFS','style':'position:absolute;right:0;'});
             btnFS.innerText='перейти в полный экран';
