@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Watch anime online on shikimori.one
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.2.8
+// @version      0.3.0
 // @description  ...
 // @author       AnimeshnikMC
 // @match        https://shikimori.one/*
@@ -22,10 +22,18 @@
         function setAttrs(el,attrs){for(var key in attrs){el.setAttribute(key,attrs[key])}}
         function getAttr(el,attr='notifType'){return el.getAttribute(attr)}
 
-        var s1=false,s2=false,el;
+        var s1=false,s2=false,el,m1='.l-content>div:nth-child(1)>.b-db_entry';
         function cId(){return getAttr(DQS('body'),'id')==='animes_show'?true:false}
+        function WAOscaling(){
+            var vid_w=DQS(`${m1}>.c-about>.WAOmain`).offsetWidth-6,
+                vid_h=(vid_w/(16/9)).toFixed(0),
+                player=DQS(`${m1}>.c-about>.WAOmain>.watchAnimeOnline`);
+            player.style.width=vid_w;
+            player.style.height=vid_h;
+                
+        }
         this.s0=()=>{
-            let player,btnFS,playerFr,animeID=getAttr(DQS('.l-content>div:nth-child(1)>.b-db_entry>.c-image>.b-user_rate'),'data-model');
+            let player,btnFS,playerFr,animeID=getAttr(DQS(`${m1}>.c-image>.b-user_rate`),'data-model');
             player=DCE('div');btnFS=DCE('button');playerFr=DCE('iframe');
             setAttrs(player,{'class':'watchAnimeOnline','style':'position:relative;width:610px;height:370px;'});
             setAttrs(btnFS,{'class':'b-link_button btnFS','style':'position:absolute;right:0;'});
@@ -47,8 +55,9 @@
         }
         this.s1=()=>{
             if(!s1){
-                let main,btnWatch,mainEl=DQS('.l-content>div:nth-child(1)>.b-db_entry>.c-about');
+                let main,btnWatch,mainEl=DQS(`${m1}>.c-about`);
                 main=DCE('div');btnWatch=DCE('button');
+                setAttrs(main,{'class':'WAOmain'});
                 setAttrs(btnWatch,{'class':'b-link_button btnWatch'});
                 btnWatch.innerText='Смотреть онлайн';
                 main.append(btnWatch);
@@ -60,6 +69,9 @@
                 s1=true;
             }
         }
-        setInterval(()=>{if(cId()){this.s1()}else if(!cId()&&s1){s1=false}},1000);
+        setInterval(()=>{
+            if(cId()){this.s1()}else if(!cId()&&s1){s1=false}
+            if(cId()&&s1&&s2){WAOscaling()}
+        },1000);
     }
 })();
