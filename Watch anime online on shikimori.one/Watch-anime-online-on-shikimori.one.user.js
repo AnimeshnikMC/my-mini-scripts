@@ -22,7 +22,7 @@
         function setAttrs(el,attrs){for(var key in attrs){el.setAttribute(key,attrs[key])}}
         function getAttr(el,attr='notifType'){return el.getAttribute(attr)}
 
-        var s1=false,s2=false,el,m1='.l-content>div:nth-child(1)>.b-db_entry';
+        var s2=false,el,m1='.l-content>div:nth-child(1)>.b-db_entry';
         function cId(){return getAttr(DQS('body'),'id')==='animes_show'?true:false}
         function WAOscaling(p0=0){
             var vid_w=DQS(`${m1}>.c-about>.WAOmain`).offsetWidth-6,
@@ -58,7 +58,7 @@
             return player
         }
         this.s1=()=>{
-            if(!s1&&!DQS(`${m1}>.c-about>.WAOmain`)){
+            if(!DQS(`${m1}>.c-about>.WAOmain`)){
                 let main,btnWatch,mainEl=DQS(`${m1}>.c-about`);
                 main=DCE('div');btnWatch=DCE('button');
                 setAttrs(main,{'class':'WAOmain'});
@@ -70,12 +70,11 @@
                     if(!s2){main.append(el=this.s0());btnWatch.innerText='Закрыть';s2=true;}
                     else if(s2){el.remove();btnWatch.innerText='Смотреть онлайн';s2=false}
                 })
-                s1=true;
             }
         }
         setInterval(()=>{
-            if(cId()){this.s1()}else if(!cId()&&s1){s1=false}
-            if(cId()&&s1&&s2&&!document.fullscreenElement){WAOscaling()}
+            if(cId()){this.s1()}
+            if(cId()&&s2&&!document.fullscreenElement){WAOscaling()}
         },1000);
     }
 })();
