@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Watch anime online on shikimori.one
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.3.1
+// @version      0.3.2
 // @description  ...
 // @author       AnimeshnikMC
 // @match        https://shikimori.one/*
@@ -58,7 +58,7 @@
             return player
         }
         this.s1=()=>{
-            if(!s1){
+            if(!s1&&!DQS(`${m1}>.c-about>.WAOmain`)){
                 let main,btnWatch,mainEl=DQS(`${m1}>.c-about`);
                 main=DCE('div');btnWatch=DCE('button');
                 setAttrs(main,{'class':'WAOmain'});
