@@ -13,6 +13,8 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_unregisterMenuCommand
 // @grant        GM_openInTab
+// @tag          productivity
+// @tag          utilities
 // ==/UserScript==
 
 (function(){
