@@ -22,7 +22,7 @@
 	async function getAnime(title,Private=0){
 		var url="https://shikimori.one/api/graphql",
 			cfg={method:"POST",headers:{"Content-Type":"application/json"},
-				 body:JSON.stringify({query:`{animes(search:"${title}",limit:1,kind:"!special,!tv_special"){id,malId,name,russian,url,kind}}`})
+				body:JSON.stringify({query:`{animes(search:"${title}",limit:1,kind:"!special,!tv_special"){id,malId,name,russian,url,kind}}`})
 			},p0;
 		p0=await fetch(url,cfg).then(res=>res.json()).then(data=>data.data);
 		if(Private===0){GM_openInTab(p0?.animes[0]?.url,{loadInBackground:true})}
