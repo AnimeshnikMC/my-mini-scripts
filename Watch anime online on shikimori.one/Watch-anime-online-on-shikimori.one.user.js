@@ -34,13 +34,13 @@
             }else{
                 return [vid_w,vid_h]
             }
-            
+
         }
         this.s0=()=>{
             let player,btnFS,playerFr,animeID=getAttr(DQS(`${m1}>.c-image>.b-user_rate`),'data-model'),p0=WAOscaling(1);
             player=DCE('div');btnFS=DCE('button');playerFr=DCE('iframe');
             setAttrs(player,{'class':'watchAnimeOnline','style':`position:relative;width:${p0[0]}px;height:${p0[1]}px;`});
-            setAttrs(btnFS,{'class':'b-link_button btnFS','style':'position:absolute;right:0;'});
+            setAttrs(btnFS,{'class':'b-link_button dark btnFS','style':'position:absolute;right:0;'});
             btnFS.innerText='перейти в полный экран';
             setAttrs(playerFr,{'src':`//kodik.cc/find-player?shikimoriID=${JSON.parse(animeID).target_id}`,'width':"100%",'height':'100%','frameborder':'0','allowfullscreen':'','allow':'autoplay *;fullscreen *'});
             player.addEventListener('fullscreenchange',()=>{
@@ -62,7 +62,7 @@
                 let main,btnWatch,mainEl=DQS(`${m1}>.c-about`);
                 main=DCE('div');btnWatch=DCE('button');
                 setAttrs(main,{'class':'WAOmain'});
-                setAttrs(btnWatch,{'class':'b-link_button btnWatch'});
+                setAttrs(btnWatch,{'class':'b-link_button dark btnWatch'});
                 btnWatch.innerText='Смотреть онлайн';
                 main.append(btnWatch);
                 mainEl.append(main);
