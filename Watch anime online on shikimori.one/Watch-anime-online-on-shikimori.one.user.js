@@ -10,6 +10,9 @@
 // @updateURL    https://raw.githubusercontent.com/AnimeshnikMC/my-mini-scripts/main/Watch%20anime%20online%20on%20shikimori.one/Watch-anime-online-on-shikimori.one.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
 // @grant        none
+// @tag			 productivity
+// @tag			 utilities
+// @tag			 social media
 // ==/UserScript==
 
 (function(){
