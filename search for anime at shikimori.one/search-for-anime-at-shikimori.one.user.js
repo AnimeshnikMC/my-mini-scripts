@@ -16,27 +16,27 @@
 // ==/UserScript==
 
 (function(){
-    'use strict';
+	'use strict';
 
-    var btn1="off",btn2="off";
-    async function getAnime(title,Private=0){
-        var url="https://shikimori.one/api/graphql",
-            cfg={method:"POST",headers:{"Content-Type":"application/json"},
-                 body:JSON.stringify({query:`{animes(search:"${title}",limit:1,kind:"!special,!tv_special"){id,malId,name,russian,url,kind}}`})
-            },p0;
-        p0=await fetch(url,cfg).then(res=>res.json()).then(data=>data.data);
-        if(Private===0){GM_openInTab(p0?.animes[0]?.url,{loadInBackground:true})}
-        else if(Private===1){GM_openInTab(p0?.animes[0]?.url,{incognito:true})}
-    }
-    function s0(){var p0=window.getSelection();return p0.toString()}
-    document.addEventListener("selectionchange",(event)=>{
-        var p0=s0();
-        if(p0.length){
-            btn1=GM_registerMenuCommand(`search ${p0}`,()=>{if(p0.length)getAnime(p0)},{id:"btn01",title:`${p0}`})
-            btn2=GM_registerMenuCommand(`search private ${p0}`,()=>{if(p0.length)getAnime(p0,1)},{id:"btn02",title:`${p0}`})
-        }
-        if(!p0.length&&btn1!=="off"){GM_unregisterMenuCommand(btn1);btn1="off"}
-        if(!p0.length&&btn2!=="off"){GM_unregisterMenuCommand(btn2);btn2="off"}
-    })
+	var btn1="off",btn2="off";
+	async function getAnime(title,Private=0){
+		var url="https://shikimori.one/api/graphql",
+			cfg={method:"POST",headers:{"Content-Type":"application/json"},
+				 body:JSON.stringify({query:`{animes(search:"${title}",limit:1,kind:"!special,!tv_special"){id,malId,name,russian,url,kind}}`})
+			},p0;
+		p0=await fetch(url,cfg).then(res=>res.json()).then(data=>data.data);
+		if(Private===0){GM_openInTab(p0?.animes[0]?.url,{loadInBackground:true})}
+		else if(Private===1){GM_openInTab(p0?.animes[0]?.url,{incognito:true})}
+	}
+	function s0(){var p0=window.getSelection();return p0.toString()}
+	document.addEventListener("selectionchange",(event)=>{
+		var p0=s0();
+		if(p0.length){
+			btn1=GM_registerMenuCommand(`search ${p0}`,()=>{if(p0.length)getAnime(p0)},{id:"btn01",title:`${p0}`})
+			btn2=GM_registerMenuCommand(`search private ${p0}`,()=>{if(p0.length)getAnime(p0,1)},{id:"btn02",title:`${p0}`})
+		}
+		if(!p0.length&&btn1!=="off"){GM_unregisterMenuCommand(btn1);btn1="off"}
+		if(!p0.length&&btn2!=="off"){GM_unregisterMenuCommand(btn2);btn2="off"}
+	})
 
 })();
