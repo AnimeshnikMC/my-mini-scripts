@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Watch anime online on shikimori.one
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.3.2
-// @description  ...
+// @version      0.3.3
+// @description  Update 0.3.3: Fix kodik player (clean cache!!!)
 // @author       AnimeshnikMC
 // @match        https://shikimori.one/*
+// @match        https://shikimori.io/*
+// @match        https://shikimori.fi/*
 // @run-at       document-end
 // @downloadURL  https://raw.githubusercontent.com/AnimeshnikMC/my-mini-scripts/main/Watch%20anime%20online%20on%20shikimori.one/Watch-anime-online-on-shikimori.one.user.js
 // @updateURL    https://raw.githubusercontent.com/AnimeshnikMC/my-mini-scripts/main/Watch%20anime%20online%20on%20shikimori.one/Watch-anime-online-on-shikimori.one.user.js
@@ -45,7 +47,7 @@
 			setAttrs(player,{'class':'watchAnimeOnline','style':`position:relative;width:${p0[0]}px;height:${p0[1]}px;`});
 			setAttrs(btnFS,{'class':'b-link_button dark btnFS','style':'position:absolute;right:0;'});
 			btnFS.innerText='перейти в полный экран';
-			setAttrs(playerFr,{'src':`//kodik.cc/find-player?shikimoriID=${JSON.parse(animeID).target_id}`,'width':"100%",'height':'100%','frameborder':'0','allowfullscreen':'','allow':'autoplay *;fullscreen *'});
+			setAttrs(playerFr,{'src':`//kodikplayer.com/find-player?shikimoriID=${JSON.parse(animeID).target_id}`,'width':"100%",'height':'100%','frameborder':'0','allowfullscreen':'','allow':'autoplay *;fullscreen *'});
 			player.addEventListener('fullscreenchange',()=>{
 				if (document.fullscreenElement) {
 					btnFS.innerText='выйти из полного экрана';btnFS.style.opacity=0.2
