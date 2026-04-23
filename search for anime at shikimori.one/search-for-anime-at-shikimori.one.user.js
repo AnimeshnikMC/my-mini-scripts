@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         search for anime at shikimori
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.6.1
-// @description  Update 0.6.1: fix and optimization
+// @version      0.6.2
+// @description  Update 0.6.2: fix
 // @author       AnimeshnikMC
 // @match        *://*/*
 // @exclude      /^[^:/#?]*:\/\/([^#?/]*\.)?shikimori\.fi(:[0-9]{1,5})?\/.*$/
@@ -42,7 +42,7 @@
 						`[${e0}] search ${title}`,
 						async()=>{
 							let p=await getAnime(title,e0);
-							p.length?GM_openInTab(p,{loadInBackground:true}):alert(`not found "${title}"`)
+							p!==undefined?GM_openInTab(p,{loadInBackground:true}):alert(`not found "${title}"`)
 						},
 						{id:`btn${btnN+1}`,title:`${title}`}
 					],
@@ -50,7 +50,7 @@
 						`[${e0}] search private ${title}`,
 						async()=>{
 							let p=await getAnime(title,e0);
-							p.length?GM_openInTab(p,{incognito:true}):alert(`not found "${title}"`)
+							p!==undefined?GM_openInTab(p,{incognito:true}):alert(`not found "${title}"`)
 						},
 						{id:`btn${btnN+2}`,title:`${title}`}
 					]
