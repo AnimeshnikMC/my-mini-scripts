@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         search for anime at shikimori
 // @namespace    https://github.com/AnimeshnikMC/my-mini-scripts
-// @version      0.6.0
-// @description  Update 0.6.0: added a multi-search for a site based on shikimori.one
+// @version      0.6.1
+// @description  Update 0.6.1: fix and optimization
 // @author       AnimeshnikMC
 // @match        *://*/*
 // @exclude      /^[^:/#?]*:\/\/([^#?/]*\.)?shikimori\.fi(:[0-9]{1,5})?\/.*$/
@@ -20,7 +20,7 @@
 
 (function(){
 	'use strict';
-	var host=['shikimori.fi','shikimori.io'],genBtn=new genBtn;
+	var host=['shikimori.fi','shikimori.io'];
 	async function getAnime(title,host){
 		var url=`https://${host}/api/graphql`,
 			cfg={method:"POST",headers:{"Content-Type":"application/json"},
@@ -36,19 +36,20 @@
 		this.createBtn=(p0,title)=>{
 			var btnN=0
 			for(let i=0;i<p0.length;i++){
-				const p1=[
+				const e0=p0[i],
+				p1=[
 					[
-						`[${p0[i]}] search ${title}`,
+						`[${e0}] search ${title}`,
 						async()=>{
-							let p=await getAnime(title,p0[i]);
+							let p=await getAnime(title,e0);
 							p.length?GM_openInTab(p,{loadInBackground:true}):alert(`not found "${title}"`)
 						},
 						{id:`btn${btnN+1}`,title:`${title}`}
 					],
 					[
-						`[${p0[i]}] search private ${title}`,
+						`[${e0}] search private ${title}`,
 						async()=>{
-							let p=await getAnime(title,p0[i]);
+							let p=await getAnime(title,e0);
 							p.length?GM_openInTab(p,{incognito:true}):alert(`not found "${title}"`)
 						},
 						{id:`btn${btnN+2}`,title:`${title}`}
@@ -70,13 +71,13 @@
 			//CL(btnList)
 		}
 	}
+	var gB=new genBtn;
 	document.addEventListener("selectionchange",(event)=>{
 		var p0=s0();
 		if(p0.length){
-			genBtn.createBtn(host,p0)
+			gB.createBtn(host,p0)
 		}else{
-			genBtn.removeBtn()
+			gB.removeBtn()
 		}
 	})
-
 })();
